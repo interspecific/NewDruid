@@ -6,10 +6,10 @@
   <title>Our Approach | New Druid Institute</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Inline CSS for this page – can be moved to styles.css later */
+    /* Inline CSS for this page */
     #approach {
       padding: 40px 20px;
-      background-color: #f5f5dc; /* Light natural background */
+      background-color: #f5f5dc;
     }
     .approach-card {
       background-color: #ffffff;
@@ -39,6 +39,39 @@
       margin-bottom: 40px;
       color: #2F4F4F;
     }
+
+    /* Mobile Menu Accordion */
+    .menu-toggle {
+      display: none;
+      background-color: #708238;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #35483e;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -46,15 +79,18 @@
 <header>
   <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 120px; height: auto;">
   <h1>New Druid Institute</h1>
+
+  <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+
   <nav>
-    <ul>
+    <ul id="menuList">
         <li><a href="index.html">Home</a></li>
         <li><a href="classes.html">Classes</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="approach.html">Our Approach</a></li>
         <li><a href="register.html">Registration</a></li>
         <li><a href="feedback.html">Customer Feedback</a></li>
       </ul>
+      
   </nav>
 </header>
 
@@ -62,23 +98,27 @@
   <h2>Our Approach</h2>
 
   <div class="approach-card">
-    <p>The Druids were known for their knowledge of the natural world and wisdom in adjudication and public administration. Well-to-do Europeans would send their children to study with the Druids for the best education at the time. But they did not keep much in the way of written records, and there is a lot of question and some controversy surrounding what they did and did not know and some of their practices. Our approach is more inspired by the Druids than based directly on them, and our aim is to develop a new culture that combines some old ways, including those of other cultures in addition to the Druids, along with current knowledge.</p>
+    <p>The Druids were known for their knowledge of the natural world and wisdom in adjudication and public administration. Well-to-do Europeans would send their children to study with the Druids for the best education at the time. However, they left few written records, and much of what they practiced is the subject of debate.</p>
 
-    <p>Our safety and operations courses are no joke. They are tailored to your needs, and are science-backed, modern, and serious. We practice what we preach and include our extensive experience to show the practicality of the subject matter.</p>
+    <p>Our approach is inspired by the Druids — and other ancient traditions — but is firmly grounded in modern science, sustainability, and practical wisdom. We strive to build a new culture that combines time-tested ways of living with up-to-date knowledge and ecological understanding.</p>
 
-    <p>Our courses in sustainable agriculture, resource management, and ecological restoration are also backed by science and experience, but they can include more traditional knowledge and practices.</p>
+    <p>Our safety and operations courses are serious, practical, and customized to meet your real-world needs. They are science-backed, experience-driven, and focused on preparing you for success.</p>
 
-    <p>Our custom classes can be nearly anything related to the outdoors and can range from spirituality discussions, how to therapeutically connect with the environment, to backpacking for beginners and more.</p>
+    <p>In areas like sustainable agriculture, ecological restoration, and resource management, we blend hard science with traditional knowledge to give you the best of both worlds.</p>
+
+    <p>Our custom classes explore topics ranging from therapeutic nature connections, to spirituality and ecology, to outdoor skills like backpacking and wilderness navigation — all centered on meaningful engagement with the land.</p>
   </div>
 
   <div class="approach-card">
     <h3>Bringing Nature into Our Lives</h3>
 
-    <p>By way of example, in literature and film, one of the very first things characters do upon experiencing trauma is to go outside. They get fresh air, sit among trees, or go fishing to calm down and recover. In real life, people very frequently list "outdoorsy" as one of their main characteristics, even if it isn't necessarily true. They want it to be true. And nearly as frequently, outdoorsy people do spend time outdoors but don't really know what is around them; therefore, they don't fully experience or connect with their environments.</p>
+    <p>In literature and in life, one of the most common human responses to stress, grief, or trauma is to seek solace in nature — to step outside, breathe the air, sit among trees, or visit a favorite quiet place. It's instinctual.</p>
 
-    <p>Additionally, our world is increasingly denuded, polluted, and paved while most people are unaware of what we are losing. We learn every day how these facts affect our individual and collective health to our detriment. But we can incorporate Nature back into what we're doing for the benefit of all.</p>
+    <p>Yet today, many people describe themselves as "outdoorsy" but feel disconnected from the ecosystems around them. They may hike or garden without knowing the plants they pass, the cycles they witness, or the relationships they are part of.</p>
 
-    <p>We can understand and relate to our world and have meaningful connections.</p>
+    <p>Meanwhile, landscapes continue to be paved, degraded, and altered at an alarming rate — and much of our collective and individual health is paying the price.</p>
+
+    <p>Our work is about reversing that trend. It’s about helping people understand, respect, and meaningfully reconnect with nature — for their own wellbeing and for the future of the planet.</p>
 
     <blockquote>
       "Learning about the natural world along with safety and some ancient ways is the key to understanding our place in the world and how to protect it."
@@ -91,6 +131,20 @@
 <footer>
   <p>© 2025 New Druid Institute, LLC. All rights reserved.</p>
 </footer>
+
+<script>
+  // Mobile menu toggle script
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+
+  menuToggle.addEventListener('click', () => {
+    if (menuList.style.display === "flex" || menuList.style.display === "block") {
+      menuList.style.display = "none";
+    } else {
+      menuList.style.display = "block";
+    }
+  });
+</script>
 
 </body>
 </html>

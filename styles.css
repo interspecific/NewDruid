@@ -13,14 +13,18 @@ body, h1, h2, p, ul, li {
   }
   
   header {
-    background-color: #2F4F4F;
+    background-color: #35483e;
     color: #aec0b3;
     padding: 20px;
     text-align: center;
   }
   
   nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
+    padding: 0;
   }
   
   nav ul li {
@@ -46,7 +50,7 @@ body, h1, h2, p, ul, li {
     background-repeat: no-repeat;
     padding: 100px 20px;
     text-align: center;
-    color: #ffffff; /* White for better contrast */
+    color: #ffffff;
   }
   
   #hero h2 {
@@ -61,24 +65,27 @@ body, h1, h2, p, ul, li {
   }
   
   button, #contactButton {
-    background-color: #8B5E3C; /* Warm Soil Brown */
+    background-color: #35483e; /* light tan */
+    color: #ffffff; /* deep forest green text */
     border: none;
-    color: #ffffff;
     padding: 14px 28px;
     font-size: 1.1rem;
     cursor: pointer;
     border-radius: 8px;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
   }
   
   button:hover, #contactButton:hover {
-    background-color: #708238; /* Leafy Olive */
+    background-color: #978019; /* darker olive on hover */
+    color: #ffffff; /* switch text color to white */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03); /* slightly grow */
   }
+  
   
   section {
     padding: 60px 20px;
-    background-color: #f5f5dc; /* Light neutral background for all sections */
+    background-color: #f5f5dc; /* Light neutral background */
     text-align: center;
   }
   
@@ -108,15 +115,15 @@ body, h1, h2, p, ul, li {
   }
   
   a {
-    color: #2F4F4F;
-  }
-  
-  a:hover {
     color: #708238;
   }
   
+  a:hover {
+    color: #506b2a;
+  }
+  
   img {
-    border-radius: 10px; /* Make all images slightly rounded */
+    border-radius: 10px; /* Rounded images */
   }
   
   footer {
@@ -133,10 +140,7 @@ body, h1, h2, p, ul, li {
   @media (max-width: 768px) {
   
     nav ul {
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 0;
     }
   
     nav ul li {

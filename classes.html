@@ -6,7 +6,7 @@
   <title>Classes | New Druid Institute</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Inline styles for this page – can move to styles.css later */
+    /* Inline styles for this page */
     #classes {
       padding: 40px 20px;
       background-color: #f5f5dc; /* Light, calming background */
@@ -45,6 +45,40 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    /* Mobile Menu Accordion */
+    .menu-toggle {
+      display: none;
+      background-color: #708238;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #35483e;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -52,50 +86,54 @@
 <header>
   <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 120px; height: auto;">
   <h1>New Druid Institute</h1>
+
+  <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+
   <nav>
-    <ul>
+    <ul id="menuList">
         <li><a href="index.html">Home</a></li>
-        <li><a href="classes.html">Classes</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="approach.html">Our Approach</a></li>
         <li><a href="register.html">Registration</a></li>
         <li><a href="feedback.html">Customer Feedback</a></li>
       </ul>
+      
+      
   </nav>
 </header>
 
 <section id="classes">
   <h2>Explore the Natural World with Us</h2>
-  <p>Below are our most common courses and services to start expanding your knowledge and skills. Whether you're a beginner or an experienced professional, our courses offer something for everyone.</p>
+  <p>Below are our most common courses and services to help you expand your knowledge and skills. Whether you're a beginner or an experienced professional, our courses offer something for everyone.</p>
 
   <div class="class-card">
     <h4>Red Cross Adult First Aid/CPR/AED Certification Course</h4>
-    <p>American Red Cross offers top-tier emergency response curricula. Students who successfully complete this course will receive the American Red Cross certification. This is an in-person class including lecture and as realistic as possible hands-on practice and skills assessments.</p>
+    <p>The American Red Cross offers top-tier emergency response curricula. Students who successfully complete this course will receive an official Red Cross certification. This is an in-person class with both lecture and realistic, hands-on skills practice and assessments.</p>
     <p><a href="#">Contact us</a> for more information. To register for the course, <a href="#">click here</a>.</p>
   </div>
 
   <div class="class-card">
     <h4>Chainsaw Safety and Tree Felling</h4>
-    <p>Our instructor has over 20 years of chainsaw experience with multiple certifications and training from professional organizations. This class includes 5–6 hours of classroom learning and 5–8 hours of fieldwork with demonstrations and hands-on assessments.</p>
+    <p>Learn chainsaw safety and proper tree felling techniques from an instructor with over 20 years of professional experience. This class includes 5–6 hours of classroom instruction and 5–8 hours of field practice with demonstrations and assessments.</p>
     <p><a href="#">Click here</a> for more information and <a href="#">here to register</a>.</p>
   </div>
 
   <div class="class-card">
     <h4>Materials Handling Equipment Safety</h4>
-    <p>Learn how to operate skidsteers, mini excavators, and other equipment safely and efficiently. This two-day course includes classroom learning and field demonstrations with skills assessments tailored to the attachments and operations you'll use.</p>
+    <p>Get trained on the safe operation of skidsteers, mini excavators, and other equipment. This two-day course covers classroom learning followed by hands-on skills assessments tailored to the attachments you plan to use.</p>
     <p><a href="#">Click here</a> for more information and <a href="#">here for registration</a>.</p>
   </div>
 
   <div class="class-card">
-    <h4>Tree and Plant Identification/Basic Ecology</h4>
-    <p>Learn to identify plants, understand plant communities, and connect deeper with the land. Seasonal courses may include foraging tips and historical medicinal uses.</p>
+    <h4>Tree and Plant Identification / Basic Ecology</h4>
+    <p>Learn how to identify plants, understand plant communities, and read the natural signs around you. Seasonal courses may also cover foraging techniques and traditional medicinal uses of native species.</p>
     <p><a href="#">Click here</a> for more information and <a href="#">here for registration</a>.</p>
   </div>
 
   <div class="class-card">
     <h4>Custom Classes and Services</h4>
-    <p>We offer custom education and consulting services, including leadership training, sustainable agriculture, foraging, spirituality and ecology discussions, prescribed fire training, plant disease diagnosis, and operations consulting for organizations.</p>
-    <p>If interested in custom classes or services, <a href="#">click here</a> to talk with us.</p>
+    <p>Looking for something specific? We offer custom educational programs and consulting services, including leadership training, sustainable agriculture, foraging, spiritual ecology discussions, prescribed fire training, plant health diagnostics, and more.</p>
+    <p>If you're interested in a custom class or service, <a href="#">click here</a> to start a conversation.</p>
   </div>
 
 </section>
@@ -103,6 +141,20 @@
 <footer>
   <p>© 2025 New Druid Institute, LLC. All rights reserved.</p>
 </footer>
+
+<script>
+  // Mobile menu toggle script
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+
+  menuToggle.addEventListener('click', () => {
+    if (menuList.style.display === "flex" || menuList.style.display === "block") {
+      menuList.style.display = "none";
+    } else {
+      menuList.style.display = "block";
+    }
+  });
+</script>
 
 </body>
 </html>

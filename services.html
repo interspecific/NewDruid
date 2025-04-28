@@ -6,10 +6,10 @@
   <title>Services | New Druid Institute</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Inline styles just for services page – you can move this to styles.css if you want */
+    /* Inline styles just for services page */
     #services {
       padding: 40px 20px;
-      background-color: #f5f5dc; /* Natural light background */
+      background-color: #f5f5dc;
     }
     .service-card {
       background-color: #ffffff;
@@ -25,8 +25,7 @@
       margin-top: 0;
       color: #2F4F4F;
     }
-    .service-card p {
-      margin-bottom: 0;
+    .service-card p, .service-card li {
       color: #2F4F4F;
     }
     #services > h2, #services > p {
@@ -35,6 +34,40 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    /* Mobile Menu Accordion */
+    .menu-toggle {
+      display: none;
+      background-color: #708238;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #35483e;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -42,64 +75,81 @@
 <header>
   <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 120px; height: auto;">
   <h1>New Druid Institute</h1>
+
+  <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+
   <nav>
-    <ul>
+    <ul id="menuList">
         <li><a href="index.html">Home</a></li>
         <li><a href="classes.html">Classes</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a href="approach.html">Our Approach</a></li>
         <li><a href="register.html">Registration</a></li>
         <li><a href="feedback.html">Customer Feedback</a></li>
       </ul>
+      
+  </nav>
 </header>
 
 <section id="services">
-    <h2>Our Services</h2>
-    <p>New Druid Institute offers a broad range of ecological, land stewardship, and sustainable living services. Each service is tailored to meet the specific needs of individuals, businesses, organizations, and agencies.</p>
-  
-    <div class="service-card">
-      <h3>Ecological Management and Restoration</h3>
-      <p>We provide comprehensive services for landowners and organizations seeking to restore or enhance natural ecosystems. Offerings include:</p>
-      <ul>
-        <li><strong>Prescribed Burns:</strong> Planning, permitting support, and safe implementation of ecological burns for prairies, wetlands, and woodlands.</li>
-        <li><strong>Ecological Restoration Plans:</strong> Science-based site assessments, species recommendations, and long-term management planning.</li>
-        <li><strong>Site Assessments:</strong> Evaluations of ecological conditions with tailored management recommendations.</li>
-      </ul>
-    </div>
-  
-    <div class="service-card">
-      <h3>Forestry and Land Stewardship Consulting</h3>
-      <p>Our forestry services support sustainable, resilient landscapes with:</p>
-      <ul>
-        <li><strong>Forestry Consulting:</strong> Stewardship plans, timber stand improvement strategies, habitat enhancement guidance, and invasive species assessments.</li>
-        <li><strong>Landscape Design:</strong> Creation of environmentally conscious landscapes using native plants to reduce water use and support biodiversity.</li>
-        <li><strong>Permaculture Design:</strong> Integration of agriculture, ecology, and landscaping principles to create productive, regenerative systems tailored to your site and goals.</li>
-      </ul>
-    </div>
-  
-    <div class="service-card">
-      <h3>Garden and Water Management Solutions</h3>
-      <p>For homeowners, communities, and businesses seeking sustainable gardens and stormwater solutions:</p>
-      <ul>
-        <li><strong>Garden Consulting:</strong> Pollinator gardens, native plantings, backyard edible gardens, and soil health improvement consulting.</li>
-        <li><strong>Rain Garden Installation:</strong> Site-specific design and installation of rain gardens to capture and filter stormwater while supporting pollinator habitat.</li>
-      </ul>
-    </div>
-  
-    <div class="service-card">
-      <h3>Technology and Monitoring</h3>
-      <p>We offer modern tools to enhance ecological work and site evaluation:</p>
-      <ul>
-        <li><strong>Drone Photography:</strong> High-resolution aerial imagery for project documentation, site monitoring, marketing, and restoration planning.</li>
-      </ul>
-    </div>
-  
-  </section>
-  
+  <h2>Our Services</h2>
+  <p>New Druid Institute offers a broad range of ecological, land stewardship, and sustainable living services. Each service is tailored to meet the specific needs of individuals, businesses, organizations, and agencies.</p>
+
+  <div class="service-card">
+    <h3>Ecological Management and Restoration</h3>
+    <p>We provide comprehensive services for landowners and organizations seeking to restore or enhance natural ecosystems. Offerings include:</p>
+    <ul>
+      <li><strong>Prescribed Burns:</strong> Planning, permitting support, and safe implementation of ecological burns for prairies, wetlands, and woodlands.</li>
+      <li><strong>Ecological Restoration Plans:</strong> Science-based site assessments, species recommendations, and long-term management planning.</li>
+      <li><strong>Site Assessments:</strong> Evaluations of ecological conditions with tailored management recommendations.</li>
+    </ul>
+  </div>
+
+  <div class="service-card">
+    <h3>Forestry and Land Stewardship Consulting</h3>
+    <p>Our forestry services support sustainable, resilient landscapes with:</p>
+    <ul>
+      <li><strong>Forestry Consulting:</strong> Stewardship plans, timber stand improvement strategies, habitat enhancement guidance, and invasive species assessments.</li>
+      <li><strong>Landscape Design:</strong> Creation of environmentally conscious landscapes using native plants to reduce water use and support biodiversity.</li>
+      <li><strong>Permaculture Design:</strong> Integration of agriculture, ecology, and landscaping principles to create productive, regenerative systems tailored to your site and goals.</li>
+    </ul>
+  </div>
+
+  <div class="service-card">
+    <h3>Garden and Water Management Solutions</h3>
+    <p>For homeowners, communities, and businesses seeking sustainable gardens and stormwater solutions:</p>
+    <ul>
+      <li><strong>Garden Consulting:</strong> Pollinator gardens, native plantings, backyard edible gardens, and soil health improvement consulting.</li>
+      <li><strong>Rain Garden Installation:</strong> Site-specific design and installation of rain gardens to capture and filter stormwater while supporting pollinator habitat.</li>
+    </ul>
+  </div>
+
+  <div class="service-card">
+    <h3>Technology and Monitoring</h3>
+    <p>We offer modern tools to enhance ecological work and site evaluation:</p>
+    <ul>
+      <li><strong>Drone Photography:</strong> High-resolution aerial imagery for project documentation, site monitoring, marketing, and restoration planning.</li>
+    </ul>
+  </div>
+
+</section>
 
 <footer>
   <p>© 2025 New Druid Institute, LLC. All rights reserved.</p>
 </footer>
+
+<script>
+  // Mobile menu toggle script
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+
+  menuToggle.addEventListener('click', () => {
+    if (menuList.style.display === "flex" || menuList.style.display === "block") {
+      menuList.style.display = "none";
+    } else {
+      menuList.style.display = "block";
+    }
+  });
+</script>
 
 </body>
 </html>

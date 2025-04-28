@@ -6,10 +6,10 @@
   <title>Customer Feedback | New Druid Institute</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Inline CSS just for Feedback page – can move to styles.css later */
+    /* Inline CSS just for Feedback page */
     #feedback {
       padding: 40px 20px;
-      background-color: #f5f5dc; /* Soft beige background */
+      background-color: #f5f5dc;
       text-align: center;
       color: #2F4F4F;
     }
@@ -42,6 +42,40 @@
       margin-right: auto;
       font-size: 1.1rem;
     }
+
+    /* Mobile Menu Accordion */
+    .menu-toggle {
+      display: none;
+      background-color: #708238;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #35483e;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -49,15 +83,18 @@
 <header>
   <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 120px; height: auto;">
   <h1>New Druid Institute</h1>
+
+  <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+
   <nav>
-    <ul>
+    <ul id="menuList">
         <li><a href="index.html">Home</a></li>
         <li><a href="classes.html">Classes</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="approach.html">Our Approach</a></li>
         <li><a href="register.html">Registration</a></li>
-        <li><a href="feedback.html">Customer Feedback</a></li>
       </ul>
+      
   </nav>
 </header>
 
@@ -69,13 +106,13 @@
 
   <div class="feedback-card">
     <h4>Sam E.</h4>
-    <p>Jeremy has a way of presenting topics in a way that's enlightening, educational, but also graspable. Anyone can present instructions to a group of people, drone of facts, and give examples, but a real instructor leaves students with something more than just knowledge. A real instructor leaves students with confidence. Jeremy took topics that I had minimal exposure to and made it so that I could confidently call my new skills work capabilities--skills I will have for the rest of my life.</p>
+    <p>Jeremy has a way of presenting topics in a way that's enlightening, educational, but also graspable. A real instructor leaves students with confidence. Jeremy took topics I had minimal exposure to and made them real capabilities.</p>
     <p><strong>Courses taken:</strong> Prescribed Fire Training, Equipment Operation, Chainsaw Safety and Tree Felling, Adult First Aid/CPR/AED Certification, Eco Leadership, Driving a Large Truck and Trailer</p>
   </div>
 
   <div class="feedback-card">
     <h4>Ian F.</h4>
-    <p>Jeremy's classes are very informative. You can ask him to identify any plant, and he will know it, along with habitat management recommendations. He's also a professional badass with a chainsaw and will show you proper, safe use of one.</p>
+    <p>Jeremy's classes are very informative. You can ask him to identify any plant, and he will know it, along with habitat management recommendations. He's also a professional badass with a chainsaw.</p>
     <p><strong>Courses taken:</strong> Prescribed Fire Training, Chainsaw Safety and Tree Felling, Adult First Aid/CPR/AED Certification</p>
   </div>
 
@@ -87,20 +124,19 @@
 
   <div class="feedback-card">
     <h4>Joel B.</h4>
-    <p>I had the pleasure of working closely with Jeremy with my previous employer. Jeremy has an exceptional ability to interpret and illustrate the systems and processes that were critical to understanding my role. His training and management style brought a sense of empowerment and ease to my transition as I assumed greater responsibility within that company.</p>
-    <p>Jeremy shows a strong proficiency in methods for training and educating staff. I believe those who have the opportunity to work with him will find qualities that inspire their own professional development through his example.</p>
+    <p>Jeremy's training style brought a sense of empowerment and ease to my professional development. His methods for training and educating staff are excellent and inspiring.</p>
     <p><strong>Courses taken:</strong> Prescribed Fire Training, Equipment Operation, Eco Leadership</p>
   </div>
 
   <div class="feedback-card">
     <h4>Ben G.</h4>
-    <p>Having Jeremy on the team to oversee our prescribed burn, ecological restoration, truck/trailer, and heavy equipment training was a welcome relief due to the experience and integrity that he brought. Jeremy has years of environmental consulting experience, provides a thoughtful approach to training, and is a dependable person to work with.</p>
+    <p>Having Jeremy on our team was a welcome relief. He provides a thoughtful approach to training, environmental consulting, and restoration with great integrity and professionalism.</p>
     <p><strong>Courses taken:</strong> Prescribed Fire Training, Driving a Large Truck and Trailer, Equipment Operation</p>
   </div>
 
   <div class="feedback-card">
     <h4>Clay K.</h4>
-    <p>Jeremy's safety classes are thorough. He'll make sure you know the material. He'll take care of you.</p>
+    <p>Jeremy's safety classes are thorough. He'll make sure you know the material, and he'll take care of you.</p>
     <p><strong>Courses taken:</strong> Chainsaw Safety and Tree Felling, Prescribed Fire Training, Adult First Aid/CPR/AED Certification, Equipment Operation</p>
   </div>
 
@@ -109,6 +145,20 @@
 <footer>
   <p>© 2025 New Druid Institute, LLC. All rights reserved.</p>
 </footer>
+
+<script>
+  // Mobile menu toggle script
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+
+  menuToggle.addEventListener('click', () => {
+    if (menuList.style.display === "flex" || menuList.style.display === "block") {
+      menuList.style.display = "none";
+    } else {
+      menuList.style.display = "block";
+    }
+  });
+</script>
 
 </body>
 </html>

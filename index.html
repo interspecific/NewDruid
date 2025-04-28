@@ -22,7 +22,7 @@
       margin-bottom: 20px;
     }
     #hero button {
-      background-color: #8B5E3C;
+      background-color: #a7c87c;
       border: none;
       color: #ffffff;
       padding: 12px 24px;
@@ -70,29 +70,68 @@
       padding: 20px;
       font-size: 0.9rem;
     }
+
+    /* Mobile Menu Accordion */
+    .menu-toggle {
+      display: none;
+      background-color: #708238;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #35483e;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 120px; height: auto;">
+  <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 160px; height: auto;">
+
   <h1>New Druid Institute</h1>
+  
+  <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
+    <ul id="menuList">
       <li><a href="classes.html">Classes</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="approach.html">Our Approach</a></li>
       <li><a href="register.html">Registration</a></li>
       <li><a href="feedback.html">Customer Feedback</a></li>
     </ul>
+    
   </nav>
 </header>
 
 <section id="hero">
   <h2>Welcome to the New Druid Institute</h2>
   <p>Learn About the Natural World, Safety, and Some Ancient Ways</p>
-  <button id="contactButton">Contact Us</button>
+  <a href="#contact" id="contactButton">Contact Us</a>
+
 </section>
 
 <section id="why">
@@ -121,10 +160,10 @@
 
 <section id="owner">
   <h2>Meet the Owner</h2>
-  <div class="card">
-    <img src="jeremy.avif" alt="Jeremy Weber" style="max-width: 200px; height: auto;">
+  <div class="card" style="text-align: center;">
+    <img src="jeremy.avif" alt="Jeremy Weber" style="max-width: 200px; height: auto; margin: 0 auto;">
     <p>Jeremy Weber holds degrees in Forestry, Botany, and Plant Pathology from Purdue University. He brings over 20 years of experience in restoration, forestry, safety training, and resource management across the Midwest and Northern Rockies. Jeremy is a certified Forest Therapy Practitioner, blending modern science with ancient wisdom to help people reconnect with the land.</p>
-  </div>
+  </div>  
 </section>
 
 <section id="contact">
@@ -140,7 +179,19 @@
   <p>© 2025 New Druid Institute, LLC. All rights reserved.</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // Mobile menu toggle script
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+
+  menuToggle.addEventListener('click', () => {
+    if (menuList.style.display === "flex" || menuList.style.display === "block") {
+      menuList.style.display = "none";
+    } else {
+      menuList.style.display = "block";
+    }
+  });
+</script>
 
 </body>
 </html>

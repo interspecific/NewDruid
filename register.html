@@ -6,10 +6,10 @@
   <title>Cancellation and Refund Policies | New Druid Institute</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Inline CSS for the Registration page – can move to styles.css later */
+    /* Inline CSS for Registration page */
     #registration {
       padding: 40px 20px;
-      background-color: #f5f5dc; /* Soft background */
+      background-color: #f5f5dc;
       text-align: center;
       color: #2F4F4F;
     }
@@ -31,6 +31,40 @@
       margin-bottom: 30px;
       color: #2F4F4F;
     }
+
+    /* Mobile Menu Accordion */
+    .menu-toggle {
+      display: none;
+      background-color: #708238;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #35483e;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -38,19 +72,20 @@
 <header>
   <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 120px; height: auto;">
   <h1>New Druid Institute</h1>
+
+  <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+
   <nav>
-    <ul>
+    <ul id="menuList">
         <li><a href="index.html">Home</a></li>
         <li><a href="classes.html">Classes</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="approach.html">Our Approach</a></li>
-        <li><a href="register.html">Registration</a></li>
         <li><a href="feedback.html">Customer Feedback</a></li>
       </ul>
+      
   </nav>
 </header>
-
-
 
 <section id="registration">
   <h2>Cancellation and Refund Policies</h2>
@@ -70,6 +105,20 @@
 <footer>
   <p>© 2025 New Druid Institute, LLC. All rights reserved.</p>
 </footer>
+
+<script>
+  // Mobile menu toggle script
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+
+  menuToggle.addEventListener('click', () => {
+    if (menuList.style.display === "flex" || menuList.style.display === "block") {
+      menuList.style.display = "none";
+    } else {
+      menuList.style.display = "block";
+    }
+  });
+</script>
 
 </body>
 </html>
