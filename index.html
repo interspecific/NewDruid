@@ -5,25 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>New Druid Institute</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Inline styles for homepage improvements */
+    #hero {
+      background-color: #f5f5dc;
+      padding: 80px 20px;
+      text-align: center;
+      color: #2F4F4F;
+    }
+    #hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    #hero button {
+      background-color: #8B5E3C;
+      border: none;
+      color: #ffffff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    #hero button:hover {
+      background-color: #708238;
+    }
+
+    section {
+      padding: 40px 20px;
+      background-color: #f5f5dc;
+      text-align: center;
+      color: #2F4F4F;
+    }
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #d0d0d0;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    ul {
+      text-align: left;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    img {
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    footer {
+      background-color: #2F4F4F;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 120px; height: auto;">
-        <h1>New Druid Institute</h1>
-        <nav>
-          <ul>
-            <li><a href="classes.html">Classes</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="approach.html">Our Approach</a></li>
-            <li><a href="register.html">Registration</a></li>
-            <li><a href="services.html">Meet the Owner</a></li>
-            <li><a href="feedback.html">Customer Feedback</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      
+<header>
+  <img src="Logo.jpg" alt="New Druid Institute Logo" style="max-width: 120px; height: auto;">
+  <h1>New Druid Institute</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="register.html">Registration</a></li>
+      <li><a href="feedback.html">Customer Feedback</a></li>
+    </ul>
+  </nav>
+</header>
 
 <section id="hero">
   <h2>Welcome to the New Druid Institute</h2>
@@ -33,35 +97,43 @@
 
 <section id="why">
   <h2>Why Choose New Druid Institute?</h2>
-  <ul>
-    <li><strong>Reduce Risk:</strong> Safer and more efficient outdoor work through hazard recognition and mitigation training.</li>
-    <li><strong>Connect with Nature:</strong> Rebuild awareness of local plants, natural cycles, and the healing power of nature.</li>
-    <li><strong>Improve Operations:</strong> Boost efficiency, leadership, and field techniques through professional training.</li>
-    <li><strong>Science-backed Training:</strong> Practical, peer-reviewed, and field-proven methods for sustainable living and working.</li>
-  </ul>
+  <div class="card">
+    <ul>
+      <li><strong>Reduce Risk:</strong> Safer and more efficient outdoor work through hazard recognition and mitigation training.</li>
+      <li><strong>Connect with Nature:</strong> Rebuild awareness of local plants, natural cycles, and the healing power of nature.</li>
+      <li><strong>Improve Operations:</strong> Boost efficiency, leadership, and field techniques through professional training.</li>
+      <li><strong>Science-backed Training:</strong> Practical, peer-reviewed, and field-proven methods for sustainable living and working.</li>
+    </ul>
+  </div>
 </section>
 
 <section id="programs">
   <h2>Training Programs</h2>
-  <ul>
-    <li>Safe Chainsaw Use and Tree Felling</li>
-    <li>American Red Cross First Aid/CPR/AED Certification</li>
-    <li>Materials Handling Equipment Training</li>
-    <li>Operations Observation and Consulting</li>
-  </ul>
+  <div class="card">
+    <ul>
+      <li>Safe Chainsaw Use and Tree Felling</li>
+      <li>American Red Cross First Aid/CPR/AED Certification</li>
+      <li>Materials Handling Equipment Training</li>
+      <li>Operations Observation and Consulting</li>
+    </ul>
+  </div>
 </section>
 
 <section id="owner">
   <h2>Meet the Owner</h2>
-  <img src="jeremy.avif" alt="Jeremy Weber" style="max-width: 120px; height: auto;">
-  <p>Jeremy Weber holds degrees in Forestry, Botany, and Plant Pathology from Purdue University. He brings over 20 years of experience in restoration, forestry, safety training, and resource management across the Midwest and Northern Rockies. Jeremy is a certified Forest Therapy Practitioner, blending modern science with ancient wisdom to help people reconnect with the land.</p>
+  <div class="card">
+    <img src="jeremy.avif" alt="Jeremy Weber" style="max-width: 200px; height: auto;">
+    <p>Jeremy Weber holds degrees in Forestry, Botany, and Plant Pathology from Purdue University. He brings over 20 years of experience in restoration, forestry, safety training, and resource management across the Midwest and Northern Rockies. Jeremy is a certified Forest Therapy Practitioner, blending modern science with ancient wisdom to help people reconnect with the land.</p>
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <p>Email: info@newdruidinstitute.com</p>
-  <p>Location: 2026 Milburn Dr, Brownsburg, IN 46112</p>
-  <p>Follow us on <a href="https://www.facebook.com/new.druid.institute" target="_blank">Facebook</a></p>
+  <div class="card">
+    <p>Email: <a href="mailto:info@newdruidinstitute.com">info@newdruidinstitute.com</a></p>
+    <p>Location: 2026 Milburn Dr, Brownsburg, IN 46112</p>
+    <p>Follow us on <a href="https://www.facebook.com/new.druid.institute" target="_blank">Facebook</a></p>
+  </div>
 </section>
 
 <footer>

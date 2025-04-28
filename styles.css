@@ -1,4 +1,4 @@
-/* Reset some default styling */
+/* Reset default styling */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
@@ -7,13 +7,13 @@ body, h1, h2, p, ul, li {
   
   body {
     font-family: 'Georgia', serif;
-    background-color: #aec0b3; /* beige green */
+    background-color: #aec0b3; /* Beige-green */
     color: #2F4F4F; /* Deep Forest Green */
     line-height: 1.6;
   }
   
   header {
-    background-color: #2F4F4F; /* Deep Forest Green */
+    background-color: #2F4F4F;
     color: #aec0b3;
     padding: 20px;
     text-align: center;
@@ -36,7 +36,7 @@ body, h1, h2, p, ul, li {
   
   nav ul li a:hover {
     text-decoration: underline;
-    color: #708238; /* Leafy Olive on hover */
+    color: #708238; /* Leafy Olive */
   }
   
   #hero {
@@ -46,12 +46,13 @@ body, h1, h2, p, ul, li {
     background-repeat: no-repeat;
     padding: 100px 20px;
     text-align: center;
-    color: #2F4F4F; /* Deep Forest Green */
+    color: #ffffff; /* White for better contrast */
   }
   
   #hero h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    font-weight: normal;
   }
   
   #hero p {
@@ -63,32 +64,37 @@ body, h1, h2, p, ul, li {
     background-color: #8B5E3C; /* Warm Soil Brown */
     border: none;
     color: #ffffff;
-    padding: 12px 24px;
-    font-size: 1rem;
+    padding: 14px 28px;
+    font-size: 1.1rem;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
   }
   
   button:hover, #contactButton:hover {
-    background-color: #708238; /* Leafy Olive on hover */
+    background-color: #708238; /* Leafy Olive */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   section {
     padding: 60px 20px;
+    background-color: #f5f5dc; /* Light neutral background for all sections */
     text-align: center;
   }
   
-  #why ul, #programs ul {
-    margin-top: 20px;
+  ul {
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+    padding-left: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 15px;
   }
   
   #why li, #programs li {
-    margin-bottom: 15px;
     text-align: left;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
   }
   
   #owner p {
@@ -109,11 +115,93 @@ body, h1, h2, p, ul, li {
     color: #708238;
   }
   
+  img {
+    border-radius: 10px; /* Make all images slightly rounded */
+  }
+  
   footer {
-    background-color: #2F4F4F; /* Deep Forest Green */
+    background-color: #2F4F4F;
     color: #ffffff;
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
+  }
+  
+  /* ---------------------------
+      Mobile Responsive Styling
+  ------------------------------ */
+  @media (max-width: 768px) {
+  
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+  
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    #hero {
+      padding: 60px 15px;
+    }
+  
+    #hero h2 {
+      font-size: 2rem;
+    }
+  
+    #hero p {
+      font-size: 1rem;
+    }
+  
+    button, #contactButton {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  
+    section {
+      padding: 40px 15px;
+    }
+  
+    ul {
+      padding-left: 10px;
+    }
+  
+    img {
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+  
+    header {
+      padding: 15px;
+    }
+  
+    #hero h2 {
+      font-size: 1.8rem;
+    }
+  
+    #hero p {
+      font-size: 0.95rem;
+    }
+  
+    button, #contactButton {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+    }
+  
+    nav ul li a {
+      font-size: 1rem;
+    }
+  
+    footer {
+      font-size: 0.8rem;
+    }
   }
   
